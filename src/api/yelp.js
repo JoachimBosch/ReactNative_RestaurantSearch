@@ -1,12 +1,14 @@
 import axios from "axios";
-import "process.env";
+import Constants from "expo-constants";
+
+const apiKey = Constants.expoConfig.extra.YELP_API_KEY;
 
 export default axios.create({
   baseURL: "https://api.yelp.com/v3/businesses",
   headers: {
-    Authorization:
-      "Bearer _INSERT_API_LINK_HERE",
+    Authorization: `Bearer ${apiKey}`,
   },
 });
 
 // yelp.get('/search') => can be used like this
+ 
